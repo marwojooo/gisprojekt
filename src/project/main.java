@@ -58,8 +58,9 @@ public class main {
 		g1.addEdge(2, 4);
 		g1.addEdge(4,5);
 		g1.addEdge(5,6);
-		//g1.addEdge(2,0);
-		//g1.addEdge(1,0);
+		g1.addEdge(6,1);
+		g1.addEdge(6,0);
+		g1.addEdge(5,0);
 		g1.GetOutEdge();
 		
 		g2.addEdge(0, 1);

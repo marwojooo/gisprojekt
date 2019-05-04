@@ -115,7 +115,7 @@ public class State {
   				}
   				System.out.print("\n");
   			}*/
-  			//refine();
+  			refine();
   			/*for(int i=core_len-1;i<n1;i++){
   				for(int j=0;j<n2;j++){
   					System.out.print(M[i][j]+" ");
@@ -131,7 +131,7 @@ public class State {
   				for(int j=0; j<n2; j++)
   					if (M[i][j]){ 
   						boolean edge_ik, edge_jl;
-  						for(int k=0; k<core_len; k++){ 
+  						for(int k=core_len-1; k<core_len; k++){ 
   							int l=core_1[k];
   							edge_ik=g1.contains(i,k);
   							edge_jl=g2.contains(j,l);
