@@ -115,7 +115,7 @@ public class State {
   				}
   				System.out.print("\n");
   			}*/
-  			refine();
+  			//refine();
   			/*for(int i=core_len-1;i<n1;i++){
   				for(int j=0;j<n2;j++){
   					System.out.print(M[i][j]+" ");
