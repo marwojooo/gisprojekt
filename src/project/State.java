@@ -103,7 +103,6 @@ public class State {
   			core_2[node2]=node1;
 
   			core_len++;
-  			//cout<<"aha";
   			int k;
 
   			for(k=core_len; k<n1; k++)

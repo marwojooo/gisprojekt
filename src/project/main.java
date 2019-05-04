@@ -1,7 +1,22 @@
 package project;
 
 public class main {
-
+	public static boolean check(Graph g1,Graph g2,int c1[],int c2[]) {
+		int M[][]=new int[g1.n][g1.n];
+		for(int i=0;i<g1.n;i++) {
+			for(int j=0;j<g1.n;j++) {
+				M[i][j]=g2.A[c2[i]][c2[j]];
+				System.out.print(M[i][j]+" ");
+				if(g1.A[i][j]==1&&M[i][j]==0) {
+					//System.out.print(":((((((((");
+					return false;
+				}
+				
+			}
+			System.out.print("\n");
+		}
+		return true;
+	}
 	public static boolean match(State  s,int c1[],int c2[] ){
 	    if(s.isGoal()){
 	        s.GetCoreSet(c1, c2);
@@ -9,7 +24,7 @@ public class main {
 	        for(int i=0;i<5;i++) {
 				System.out.print("("+c1[i]+","+c2[c1[i]]+")\n");
 			}*/
-	        return true;
+	        return check(s.g1,s.g2,c1,c2);
 
 	    }
 	    if(s.isDead()){
