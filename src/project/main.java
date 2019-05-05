@@ -68,6 +68,8 @@ public class main {
 		//z.init();
 		//a3=null;
 		//z.deleteAnimal(a3);
+		//z.addAnimal(a2);
+		//z.addAnimal(a2);
 		//z.init();
 		g2.addEdge(0, 1);
 		g2.addEdge(0, 2);
