@@ -12,7 +12,19 @@ public class ZooGraph {
 		Edges=new LinkedList<Edge>();
 	}
 	void addNode(int id) {
-		IDs.add(id);
+		Integer[] A=new Integer[IDs.size()];
+		IDs.toArray(A);
+		
+		boolean flaga=true;
+		for(int i=0;i<A.length;i++) {
+			if(A[i]==id) {
+				flaga=false;
+				break;
+			}
+		}
+		if(flaga) {
+			IDs.add(id);
+		}
 	}
 	void deleteNode(int id) {
 		Integer[] A=new Integer[IDs.size()];
@@ -71,7 +83,22 @@ public class ZooGraph {
 		}
 	}
 	void addEdgeToGraph(int node1, int node2) {
-		g1.addEdge(node1, node2);
+
+			int k=-1,l=-1;
+			for(int j=0;j<ID.length;j++) {
+				if(node1==ID[j]) {
+					k=j;
+				}
+				if(node2==ID[j]) {
+					l=j;
+				}
+			}
+			if(k!=-1&&l!=-1) {
+				System.out.println(k+" "+l);
+				g1.addEdge(l, k);
+			}
+		
+		//g1.addEdge(node1, node2);
 		addEdge(node1,node2);
 	}
 	public void init() {
@@ -81,8 +108,10 @@ public class ZooGraph {
 		
 		Edge[] B=new Edge[Edges.size()];
 		Edges.toArray(B);
+		
 		int k=-1,l=-1;
 		for(int i=0;i<B.length;i++) {
+			k=-1;l=-1;
 			for(int j=0;j<ID.length;j++) {
 				if(B[i].node1==ID[j]) {
 					k=j;
@@ -95,6 +124,7 @@ public class ZooGraph {
 				g1.addEdge(l, k);
 			}
 		}
+		
 		g1.GetOutEdge();
 		
 	}

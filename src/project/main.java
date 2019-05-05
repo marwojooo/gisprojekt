@@ -83,6 +83,8 @@ public class main {
 		zoo.addEdge(10, 400);
 		zoo.addEdge(10, 89);
 		zoo.init();
+		
+		//zoo.addEdgeToGraph(4, 400);
 		//g2.addEdge(0, 1);
 		//g2.addEdge(0, 2);
 		//g2.addEdge(0, 3);
