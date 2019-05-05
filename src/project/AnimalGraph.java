@@ -13,7 +13,6 @@ public class AnimalGraph {
 	public AnimalGraph(){
 		n=0;
 		animals=new LinkedList<Animal>();
-		//animalsByName=new LinkedList<Animal>();
 	}
 	void addAnimal(Animal a) {
 		animals.add(a);

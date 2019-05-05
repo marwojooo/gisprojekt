@@ -50,7 +50,7 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Graph g1=new Graph(7);
-		Graph g2=new Graph(5);
+		//Graph g2=new Graph(5);
 		//g1.fullGraph();
 		//g1.GetOutEdge();
 		AnimalGraph z=new AnimalGraph();
@@ -71,19 +71,31 @@ public class main {
 		//z.addAnimal(a2);
 		//z.addAnimal(a2);
 		//z.init();
-		g2.addEdge(0, 1);
-		g2.addEdge(0, 2);
-		g2.addEdge(0, 3);
-		g2.addEdge(0, 4);
-		g2.GetOutEdge();
+		ZooGraph zoo=new ZooGraph();
+		zoo.addNode(10);
+		zoo.addNode(9);
+		zoo.addNode(4);
+		zoo.addNode(400);
+		zoo.addNode(89);
 		
-		State s1=new State(g2,z.g1);
+		zoo.addEdge(10, 9);
+		zoo.addEdge(10, 4);
+		zoo.addEdge(10, 400);
+		zoo.addEdge(10, 89);
+		zoo.init();
+		//g2.addEdge(0, 1);
+		//g2.addEdge(0, 2);
+		//g2.addEdge(0, 3);
+		//g2.addEdge(0, 4);
+		//g2.GetOutEdge();
+		
+		State s1=new State(zoo.g1,z.g1);
 		int c1[]=new int[z.g1.n];
-		int c2[]=new int[g2.n];
+		int c2[]=new int[zoo.g1.n];
 		if(match(s1,c1,c2)) {
 			System.out.print("TRUE\n");
-			for(int i=0;i<g2.n;i++) {
-				System.out.print("("+c1[i]+","+z.ID[c2[c1[i]]]+")\n");
+			for(int i=0;i<zoo.g1.n;i++) {
+				System.out.print("("+zoo.ID[c1[i]]+","+z.ID[c2[c1[i]]]+")\n");
 			}
 		}else {
 			System.out.print("FALSE\n");
