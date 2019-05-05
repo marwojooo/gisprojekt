@@ -11,9 +11,6 @@ public class Graph {
 	    public Graph(int n){
 	        this.n=n;
 	        A=new int[n][n];
-	        /*for(int i=0;i<n;i++){
-	            A[i]=new int[n];
-	        }*/
 
 	        numOutEdge=new int[n];
 	        numInEdge=new int[n];
@@ -44,13 +41,11 @@ public class Graph {
 
 	        for(int i=0;i<n;i++){
 	                int sum=0;
-	                //cout<<numOutEdge[i]<<endl;
 	            for(int j=0;j<n;j++){
 	                if(A[i][j]!=NULL_NODE){
 	                    OutEdge[i][sum]=j;
 	                    InEdge[i][sum]=j;
 	                    sum++;
-	                    //cout<<i<<" "<<j<<endl;
 	                }
 	            }
 	        }
@@ -62,12 +57,26 @@ public class Graph {
 	        A[node1][node2]=1;
 	        A[node2][node1]=1;
 	    }
+	    void deleteEdge(int node1,int node2){
+	        A[node1][node2]=NULL_NODE;
+	        A[node2][node1]=NULL_NODE;
+	    }
 	    void show(){
 	        for(int i=0;i<n;i++){
 	            for(int j=0;j<n;j++){
-	                //cout<<A[i][j]<<" ";
+	                
 	            }
-	            //cout<<endl;
+
 	        }
 	    }
+	    void fullGraph(){
+	    	for(int i=0;i<n;i++){
+	            for(int j=0;j<n;j++){
+	            	if(i!=j) {
+	            		A[i][j]=1;
+	            	}	
+	            }
+	        }
+	    }
+	    
 }
